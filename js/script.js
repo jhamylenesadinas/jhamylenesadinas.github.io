@@ -25,15 +25,13 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// A static HTML site cannot send email by itself. This form opens the visitor's
-// default email app with the message filled in.
 document.getElementById('contact-form').addEventListener('submit', event => {
   event.preventDefault();
   
-  // Show the thank you message
-  document.getElementById('form-status').textContent = 'Thank you for reaching out!';
+  // Show the thank you message on the page
+  document.getElementById('form-status').textContent = 'Thank you for your message!';
   
-  // Clear the input fields individually (so form-status isn't cleared)
+  // Clear the input fields so the user sees it was submitted
   document.getElementById('name').value = '';
   document.getElementById('email').value = '';
   document.getElementById('message').value = '';
