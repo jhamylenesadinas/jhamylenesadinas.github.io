@@ -34,6 +34,7 @@ document.getElementById('contact-form').addEventListener('submit', event => {
   const message = document.getElementById('message').value.trim();
   const subject = encodeURIComponent(`Portfolio message from ${name}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-  document.getElementById('form-status').textContent = 'Opening your email app…';
+  document.getElementById('form-status').textContent = 'Thank you for reaching out!';
+document.getElementById('contact-form').reset();
   window.location.href = `mailto:jhamylenes@gmail.com?subject=${subject}&body=${body}`;
 });
