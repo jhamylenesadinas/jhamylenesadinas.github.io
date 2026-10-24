@@ -29,11 +29,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // default email app with the message filled in.
 document.getElementById('contact-form').addEventListener('submit', event => {
   event.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const subject = encodeURIComponent(`Portfolio message from ${name}`);
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  
+  // Show the thank you message
   document.getElementById('form-status').textContent = 'Thank you for reaching out!';
-document.getElementById('contact-form').reset();
+  
+  // Clear the input fields individually (so form-status isn't cleared)
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('message').value = '';
 });
